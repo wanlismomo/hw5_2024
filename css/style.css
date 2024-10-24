@@ -1,0 +1,9 @@
+.card {
+    flex-basis: 450px;
+}
+
+.pricing {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
