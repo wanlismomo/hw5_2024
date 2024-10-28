@@ -116,10 +116,8 @@ a:visited {
 
 @media all and (prefers-reduced-motion: reduce) {
     /* Step #14 */
-    .logo {
-        animation: none; 
-        width: 475px; 
-        opacity: 1; 
+    #logo {
+        animation: none;
     }
 }
 
