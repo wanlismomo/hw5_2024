@@ -1,3 +1,54 @@
+/* Step #1 */
+@keyframes growLogo {
+    from {
+        width: 25px;
+        opacity: 0;
+    }
+    to {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+#logo {
+    animation: growLogo 5s forwards;
+}
+
+/* Step #2 */
+body {
+    font-family: 'Poppins', serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+/* Step #3 */
+header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Step #4 */
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Step #5 */
+a:visited {
+    color: blue;
+}
+
+/* Step #6 */
+.card > header {
+    background-color: #288088;
+    border: solid 2px #45ADAD;
+    padding: 20px 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+/* Step #7&8 */
 .card{
     flex-basis:450px;
 }
@@ -5,34 +56,121 @@
 .pricing{
     display:flex;
     flex-flow: row wrap;
-    justify-content:center;
+    justify-content: center;
+    align-items: center;
 }
 
+/* Step #9 */
+.gallery img {
+    border: solid 10px #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+/* Step #10 */
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}   
+
 @media screen and (min-width: 900px){
-    header{
+    /* Step #11 */
+    header {
         display:flex;
         flex-flow: row wrap;
         justify-content: space-between;
     }
     
-    .nav_links{
+    .nav_links {
+        display: flex;
         flex-direction: row;
+        justify-content: space-between;
     }
     
-    .card{
-        flex-basis: 275px;
+    /* Step #12 */
+    .card {
+        flex: 1 1 275px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
     
-    .pricing{
-        align-items:center;
+    .pricing {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    header:not(main header) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
     }
 }
 
-@media all and (prefers-reduced-motion: reduce){
-    
+@media all and (prefers-reduced-motion: reduce) {
+    /* Step #14 */
+    .logo {
+        animation: none; 
+        width: 475px; 
+        opacity: 1; 
+    }
 }
 
-@media print{
+@media print {
+    /* Step #15 & 16 */
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: none;
+    }
 
+    header {
+        display: flex;  
+        flex-direction: column;
+        justify-content: space-between;  
+    }
+
+    /* Step #17 */
+    nav {
+        width: 100%;
+    }
+    
+    .nav_links {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+    /* Step #18 */
+    .pricing {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex;
+    }
+    
+    /* Step #19 */
+    .card {
+        border: solid 2px #45ADDD;
+        flex-basis: 325;
+    }
+
+    /* Step #20 */
+    .gallery, #gallery {
+        display: none;
+    }
+    
+    /* Step #21 */
+    .pricing .card ul li:nth-child(2)::after {
+        content: "👍 ";
+        color: yellow;
+        font-size: 1em;
+    }
 }
 
